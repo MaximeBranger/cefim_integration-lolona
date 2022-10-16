@@ -1,0 +1,314 @@
+/* montserrat-regular - latin */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+         url('../fonts/montserrat-v25-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/montserrat-v25-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* montserrat-700 - latin */
+  @font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    src: local(''),
+         url('../fonts/montserrat-v25-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/montserrat-v25-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+
+  /* nunito-regular - latin */
+@font-face {
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+         url('../fonts/nunito-v25-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/nunito-v25-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+
+body {
+    font-family: 'Nunito';
+    font-weight: 400;
+    background-color: #f0f0f0;
+    
+    font-size: 1.8rem;
+    /* colors */
+    --red: #e95841;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Montserrat';
+    font-weight: 400;
+}
+
+h2 {
+    font-weight: 700;
+}
+
+.container {
+    max-width: 1086px;  /* 1366 - 140 - 140 px*/
+    margin: auto;
+    padding: 2rem;
+}
+
+/* Header */
+.navbar {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: min(100%, 1086px);
+}
+
+.navbar-button {
+    border: none;
+}
+
+.navbar-list {
+    display: none;
+}
+
+/* Hero */
+
+.hero {
+    display: grid;
+    gap: 12rem;
+    margin: auto;
+    margin-block-end: 5.6rem;
+    /* grid-auto-flow: dense; */
+}
+
+.main-article p, .article-content {
+    margin-bottom: 4rem;
+}
+
+.main-article button, .article-content button, .contact-form button {
+    background-color: white;
+    color: var(--red);
+    border: none;
+    border-radius: 3rem;
+    width: 17rem;
+    height: 4.5rem;
+    font-size: 1.4rem;
+    line-height: 2.6rem;
+    box-shadow: 0px 5px 10px #E9584129;
+}
+
+.main-article button:first-of-type, .article-content button:first-of-type, .contact-form button {
+    background-color: var(--red);
+    color: white;
+}
+
+.main-title {
+    font-size: 3rem;
+    font-size: clamp(3rem, 0.86rem + 3.1746031746031744vw, 6.4rem);
+}
+
+.main-title .bold {
+    font-weight: 700;
+}
+
+.main-subtitle::after {
+    content: '';
+    width: 7.6rem;
+    height: .5rem;
+    background-color: var(--red);
+    position: absolute;
+    left: 0;
+}
+
+.main-figure {
+    grid-column: 2;
+}
+
+.main-figure img {
+    border-radius: 1rem;
+    max-width: 34rem;
+}
+
+
+
+.socials-list {
+    display: flex;
+}
+
+/* Articles */
+.articles article {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 11rem;
+}
+
+.articles article:nth-child(even) .article-img {
+    order: -1;
+}
+
+.article-content {
+    display: grid;
+    align-items: flex-start;
+    max-width: 44rem;
+}
+
+.article-title {
+    font-size: 5.4rem;
+}
+
+.article-keyword {
+    order: -1;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--red);
+    align-self:flex-end;
+}
+
+.article-img {
+    grid-column: 2;
+    border-radius: 2rem;
+}
+
+.article-content button {
+    display: inline;
+}
+
+/* Process steps */
+.process-steps {
+    display: flex;
+    flex-direction: column;
+}
+
+.process-title {
+    text-align: center;
+    font-size: 5.4rem;
+}
+
+.process-subtitle {
+    color: var(--red);
+    text-align: center;
+    order: -1;
+    font-size: 1.6rem;
+    font-family: Montserrat;
+    font-weight: 700;
+}
+
+.steps-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(33rem, 1fr));
+    /* grid-template-columns: repeat(auto-fit, 1fr); */
+    width: 100%;
+    gap: 2.8rem;
+    list-style: none;
+    counter-reset: num;
+}
+
+.step-item {
+    background-color: white;
+    padding: 3.3rem;
+    counter-increment: num; 
+}
+
+.step-title::before {
+    content: counter(num);
+    font-weight: bold;
+    color: red;
+    padding-inline-end: 1rem;
+}
+
+.step-content {
+    font-size: 1.4rem;
+}
+
+/* Last Panel */
+.last-panel {
+    display: grid;
+    grid-column: 1fr, 1fr;
+    justify-content: space-between;
+}
+
+.work-title, .connect-title {
+    font-size: 5.4rem;
+    padding-block-end: 2.7rem;
+}
+
+.articles-form article {
+    display: flex;
+    flex-direction: column;
+}
+
+.work-subtitle, .connect-subtitle {
+    color: var(--red);
+    font-weight: 700;
+    order: -1;
+}
+
+.articles-form article p {
+    max-width: 44rem;
+}
+
+.contact-form {
+    grid-column: 2;
+}
+/* footer */
+
+.main-footer .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.logo {
+    display: grid;
+    grid-template-columns: 1fr, 1fr;
+    grid-template-rows: 1fr, 1fr;
+}
+
+.logo img {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.footer-title {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    font-size: 3.7rem;
+}
+
+.footer-subtitle {
+    font-family: Nunito;
+    font-size: 1.4rem;
+}
+
+.social-item {
+    width: 3rem;
+    height: 3rem;
+    opacity: 1;
+    padding: 3rem;
+    background-size: cover;
+}
+
+.footer-social-item {
+    width: 2rem;
+    height: 2rem;
+}
+
+.dribble {
+    background: transparent url('../img/Dribbble.svg') 0% 0% no-repeat padding-box;
+}
+
+.github {
+    background: transparent url('../img/Github.svg') 0% 0% no-repeat padding-box;
+}
+
+.instagram {
+    background: transparent url('../img/Instagram.svg') 0% 0% no-repeat padding-box;
+}
+
+.linkedin {
+    background: transparent url('../img/LinkedIn.svg') 0% 0% no-repeat padding-box;
+}
