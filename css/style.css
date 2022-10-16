@@ -53,12 +53,20 @@ h2 {
 }
 
 /* Header */
+.container-navbar {
+    background-color: #f0f0f0;
+    width: 100vw;
+    position: fixed;
+    margin: auto;
+    padding: 2rem;
+}
+
 .navbar {
-    position: relative;
+    max-width: 1086px;
+    margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: min(100%, 1086px);
 }
 
 .navbar-button {
@@ -101,6 +109,7 @@ h2 {
     gap: 12rem;
     margin: auto;
     margin-block-end: 5.6rem;
+    margin-block-start: 10rem;;
     /* grid-auto-flow: dense; */
 }
 
