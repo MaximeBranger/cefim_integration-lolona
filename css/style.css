@@ -70,13 +70,23 @@ h2 {
 }
 
 .navbar-button {
-    display: none;
+    display: block;
     border: none;
 }
 
 .navbar-list {
-    display: flex;
-    gap: 3rem;
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .navbar-button {
+        display: none;
+    }  
+
+    .navbar-list {
+        display: flex;
+        gap: 3rem;
+    }
 }
 
 .navbar-link {
@@ -109,8 +119,7 @@ h2 {
     gap: 12rem;
     margin: auto;
     margin-block-end: 5.6rem;
-    margin-block-start: 10rem;;
-    /* grid-auto-flow: dense; */
+    margin-block-start: 10rem;
 }
 
 .main-article p, .article-content {
@@ -122,11 +131,17 @@ h2 {
     color: var(--red);
     border: none;
     border-radius: 3rem;
-    width: 17rem;
-    height: 4.5rem;
+    width: 13rem;
+    height: 3.5rem;
     font-size: 1.4rem;
     line-height: 2.6rem;
     box-shadow: 0px 5px 10px #E9584129;
+}
+
+@media (min-width: 768px) {
+    .main-article button, .article-content button, .contact-form button {
+        width: 17rem;
+    }    
 }
 
 .main-article button:first-of-type, .article-content button:first-of-type, .contact-form button {
@@ -152,8 +167,10 @@ h2 {
     left: 0;
 }
 
-.main-figure {
-    grid-column: 2;
+@media (min-width: 768px) {
+    .main-figure {
+        grid-column: 2;
+    }
 }
 
 .main-figure img {
@@ -166,16 +183,24 @@ h2 {
 }
 
 /* Articles */
+
 .articles article {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
     margin-bottom: 11rem;
 }
 
-.articles article:nth-child(even) .article-img {
-    order: -1;
+@media (min-width: 768px) {
+    .articles article {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .articles article:nth-child(even) .article-img {
+        order: -1;
+    }
 }
+
 
 .article-content {
     display: grid;
@@ -184,7 +209,12 @@ h2 {
 }
 
 .article-title {
-    font-size: 5.4rem;
+    font-size: 3.4rem;
+}
+@media (min-width: 768px) {
+    .article-title {
+        font-size: 5.4rem;
+    }
 }
 
 .article-keyword {
@@ -213,7 +243,13 @@ h2 {
 
 .process-title {
     text-align: center;
-    font-size: 5.4rem;
+    font-size: 3rem;
+}
+
+@media (min-width: 768px) {
+    .process-title {
+        font-size: 5.4rem;
+    }
 }
 
 .process-subtitle {
@@ -233,6 +269,13 @@ h2 {
     gap: 2.8rem;
     list-style: none;
     counter-reset: num;
+}
+
+@media (min-width: 768px) {
+    .steps-list {
+        margin: 0;
+        grid-template-columns: repeat(auto-fit, 1fr);
+    }
 }
 
 .step-item {
@@ -279,13 +322,20 @@ h2 {
 }
 
 .contact-form {
-    grid-column: 2;
     justify-self: auto;
+}
+
+@media (min-width: 768px) {
+    .contact-form {
+        grid-column: 2;
+        justify-self: auto;
+    }   
 }
 
 .contact-form > * {
     width: 100%;
     border-radius: .5rem;
+    border: 0;
 }
 
 .contact-form label {
@@ -308,31 +358,51 @@ h2 {
 
 .main-footer .container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     align-content: center;
 }
 
+@media (min-width: 768px) {
+    .main-footer .container {
+        flex-direction: row;
+    }
+}
+
 .logo {
     display: grid;
-    grid-template-columns: 1fr, 1fr;
+    grid-template-columns: 1fr;
     grid-template-rows: 1fr, 1fr;
+    justify-content: center;
 }
 
-.logo img {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 3;
+.logo > * {
+    margin: auto;
 }
 
-.footer-title {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    font-size: 3.7rem;
+@media (min-width: 768px) {
+    .logo {
+        display: grid;
+        grid-template-columns: 1fr, 1fr;
+        grid-template-rows: 1fr, 1fr;
+    }
+
+    .logo img {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+    
+    .footer-title {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        font-size: 3.7rem;
+    }
 }
+
 
 .footer-subtitle {
     font-family: Nunito;
